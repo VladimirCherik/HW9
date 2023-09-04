@@ -6,20 +6,20 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-//        MyArrayList myArrayList = new MyArrayList();
-//        myArrayList.add(17);
-//        myArrayList.add(18);
-//        myArrayList.add(19);
-//        myArrayList.add(20);
-//        myArrayList.add("whou");
-//        myArrayList.add("yes");
-//        System.out.println(Arrays.toString(myArrayList.getArray()) + " - add()");
-//        myArrayList.remove(2);
-//        System.out.println(Arrays.toString(myArrayList.getArray()) + " - remove()");
-//        System.out.println(myArrayList.get(2) + " - get() element at the index");
-//        myArrayList.clear();
-//        System.out.println(Arrays.toString(myArrayList.getArray()) + " - clear()");
-//        System.out.println(myArrayList.size() + " - size()");
+        MyArrayList myArrayList = new MyArrayList();
+        myArrayList.add(17);
+        myArrayList.add(18);
+        myArrayList.add(19);
+        myArrayList.add(20);
+        myArrayList.add("whou");
+        myArrayList.add("yes");
+        System.out.println(Arrays.toString(myArrayList.getArray()) + " - add()");
+        myArrayList.remove(2);
+        System.out.println(Arrays.toString(myArrayList.getArray()) + " - remove()");
+        System.out.println(myArrayList.get(2) + " - get() element at the index");
+        myArrayList.clear();
+        System.out.println(Arrays.toString(myArrayList.getArray()) + " - clear()");
+        System.out.println(myArrayList.size() + " - size()");
 
 
 //        MyLinkedList myLinkedList = new MyLinkedList();
@@ -79,16 +79,18 @@ public class Main {
 //        System.out.println(Arrays.toString(stack.getArrayStack()));
 
 
-        MyHashMap myHashMap = new MyHashMap();
-        myHashMap.put("1", "first");
-        myHashMap.put("2", "second");
-        myHashMap.put("3", "three");
-        myHashMap.put(5, "five digit");
-        System.out.println(myHashMap.get("1"));
-        System.out.println(myHashMap.size() + " size before ");
-        myHashMap.remove("2");
-        System.out.println(myHashMap.size() + " size after deleting");
-        System.out.println(myHashMap.get(5));
+//        MyHashMap myHashMap = new MyHashMap();
+//        myHashMap.put("1", "first");
+//        myHashMap.put("1", "first");
+//        myHashMap.put("2", "second");
+//        myHashMap.put("3", "three");
+//        myHashMap.put(5, "five digit");
+//        myHashMap.put(5, "five digit");
+//        System.out.println(myHashMap.get("1"));
+//        System.out.println(myHashMap.size() + " size before ");
+//        myHashMap.remove("2");
+//        System.out.println(myHashMap.size() + " size after deleting");
+//        System.out.println(myHashMap.get(5));
 
 
 

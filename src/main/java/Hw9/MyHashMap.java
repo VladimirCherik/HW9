@@ -21,9 +21,7 @@ public class MyHashMap {
 
 
         Node(Node next) {
-//            this.hash = hash;
-//            this.key = key;
-//            this.value = value;
+
             this.next = next;
 
         }
@@ -31,14 +29,8 @@ public class MyHashMap {
 
 
     void put(Object key, Object value){
+        //перевірка на співпадіння hash
         Node target = firstBucket.next;
-        if(target != null){
-            //перевірка на співпадіння hash
-            if(firstBucket.hash == Objects.hash(key)){
-                System.err.println("this hash has already added");
-                return;
-            }
-
             for (int i = 0; i < quantity; i++){
                 if(target!= null && target.hash == Objects.hash(key)){
                     System.err.println("this hash has already added");
@@ -46,7 +38,6 @@ public class MyHashMap {
                 }
                 target = getNextMetd(target);
             }
-        }
 
         // Створення елементу.
         Node prev = lastBucket;
@@ -63,9 +54,6 @@ public class MyHashMap {
     void remove(Object key){
         Node target = firstBucket;
         for (int i = 0; i < quantity; i++){
-            System.out.println(target.key + "    target");
-            System.out.println(key + "     key");
-
             if(target.next.hash == Objects.hash(key)){
                 target.next = target.next.next;
                 quantity--;
@@ -83,15 +71,9 @@ public class MyHashMap {
         return quantity;
     }
     Object get(Object key){
-//        if(firstBucket.hash == Objects.hash(key)){
-//            System.out.println(firstBucket.hash + "!!!!");
-//            return firstBucket.value;
-//        }
         Node target = firstBucket.next;
 
         for (int i = 0; i < quantity; i++){
-//            System.out.println(target.hash + " target");
-//            System.out.println(Objects.hash(key) + " key");
             if(target.hash == Objects.hash(key)){
                 return target.value;
             }
