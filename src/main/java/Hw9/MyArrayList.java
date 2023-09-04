@@ -2,47 +2,29 @@ package Hw9;
 
 public class MyArrayList {
     private Object[] array;
-
-    public MyArrayList(){}
-    public MyArrayList(Object[]array){
-        this.array = array;
+    public MyArrayList(){
+        array = new Object[0];
     }
+
     public Object[] getArray() {
+
         return array;
     }
 
     void add(Object value){
-        sizeArray();
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == null){
-                array[i] = value;
-                break;
-            }
-        }
+        Object[] newArray = new Object[array.length + 1];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        newArray[array.length] = value;
+        array = newArray;
     }
-//    проверка размера и увеличение
-    private void sizeArray() {
-        float coefficient = 1.5f;
-        if(array[array.length - 1] != null ){
-            Object[] biggerArray = new Object[(int) (array.length * coefficient)];
-            for (int i = 0; i < array.length; i++) {
-                biggerArray[i] = array [i];
-            }
-            array = biggerArray;
-        }
-    }
-
     void remove(int index){
-        array[index] = null;
-        Object[] tempArray = new Object[array.length - 1];
-        int j = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i]!= null){
-                tempArray[j] = array[i];
-                j++;
-            }
-        }
-        array = tempArray;
+
+        Object[] newArray = new Object[array.length - 1];
+
+        System.arraycopy(array, 0, newArray, 0, index);
+        System.arraycopy(array, index + 1, newArray, index, array.length - index -1 );
+
+        array = newArray;
     }
     void clear(){
         for (int i = 0; i < array.length; i++) {
@@ -51,6 +33,7 @@ public class MyArrayList {
     }
 
     int size(){
+
         return array.length;
     }
 
