@@ -13,21 +13,6 @@ public class MyHashMap {
         firstBucket = new Node(lastBucket);
     }
 
-    private static class Node {
-        private int hash;
-        private Object key;
-        private Object value;
-        private Node next;
-
-
-        Node(Node next) {
-
-            this.next = next;
-
-        }
-    }
-
-
     void put(Object key, Object value){
         //перевірка на співпадіння hash
         Node target = firstBucket.next;
@@ -61,6 +46,7 @@ public class MyHashMap {
             }
             target = getNextMetd(target);
         }
+        System.err.println("There is not the key you would like to remove ");
     }
     void clear(){
         firstBucket = null;
@@ -79,6 +65,20 @@ public class MyHashMap {
             }
            target = getNextMetd(target);
         }
+        System.err.println("There is not the key you would like to get ");
         return null;
+    }
+    private static class Node {
+        private int hash;
+        private Object key;
+        private Object value;
+        private Node next;
+
+
+        Node(Node next) {
+
+            this.next = next;
+
+        }
     }
 }

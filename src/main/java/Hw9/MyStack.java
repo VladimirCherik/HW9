@@ -7,6 +7,7 @@ public class MyStack {
     public MyStack(){
         arrayStack = new Object[10];
     }
+
     public Object[] getArrayStack() {
         // для зручності тестування
         return arrayStack;
@@ -24,6 +25,7 @@ public class MyStack {
     private void increaseSize() {
         Object[] increasedAr = new Object[arrayStack.length + 5];
         System.arraycopy(arrayStack, 0, increasedAr, 0, arrayStack.length);
+        arrayStack = increasedAr;
     }
     Object peek(){
         // return first (from ending) element
@@ -36,11 +38,17 @@ public class MyStack {
         return temp;
     }
     void remove(int index){
-        // deletes an element at the index
-        Object[] newArray = new Object[arrayStack.length  - 1];
-        System.arraycopy(arrayStack, 0, newArray, 0, index);
-        System.arraycopy(arrayStack,index + 1, newArray, index, arrayStack.length - index - 1);
-        arrayStack = newArray;
+        if(index >= 0 && index < this.index){
+            // deletes an element at the index
+            Object[] newArray = new Object[arrayStack.length  - 1];
+            System.arraycopy(arrayStack, 0, newArray, 0, index);
+            System.arraycopy(arrayStack,index + 1, newArray, index, arrayStack.length - index - 1);
+            arrayStack = newArray;
+            this.index--;
+        }else{
+            System.err.println("There is not the index you would like to remove ");
+        }
+
     }
     void clear(){
         arrayStack = new Object[10];
